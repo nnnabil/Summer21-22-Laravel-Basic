@@ -19,7 +19,12 @@ Route::get('/profile',[PagesController::class, 'profile'])->name('profile');
 
 //Student routes
 Route::get('/studentList',[StudentController::class, 'studentList'])->name('studentList');
-Route::get('/studentEdit/{name}/{id}',[StudentController::class, 'studentEdit'])->name('studentEdit');
+Route::get('/studentEdit/{id}',[StudentController::class, 'studentEdit'])->name('studentEdit');
+Route::post('/studentEdit',[StudentController::class, 'studentEditSubmitted'])->name('studentEdit');
+
+Route::get('/studentDelete/{id}',[StudentController::class, 'studentDelete'])->name('studentDelete');
+
+
 
 Route::get('/studentCreate',[StudentController::class, 'studentCreate'])->name('studentCreate');
 Route::post('/studentCreate',[StudentController::class, 'studentCreateSubmitted'])->name('studentCreate');

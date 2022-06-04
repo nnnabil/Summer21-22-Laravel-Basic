@@ -4,13 +4,14 @@
     <tr>
         <th>Name</th>
         <th>ID</th>
-        <th>Action</th>
+        <th colspan="2">Action</th>
     </tr>
     @foreach($students as $student)
     <tr>
         <td>{{$student->name}}</td>
         <td>{{$student->id}}</td>
-        <td><a href="/studentEdit/{{$student->name}}/{{$student->id}}">Details</a></td>
+        <td><a href="/studentEdit/{{$student->id}}">Details</a></td>
+        <td><a href="/studentDelete/{{$student->id}}">Delete</a></td>
     </tr>
     @endforeach
 
