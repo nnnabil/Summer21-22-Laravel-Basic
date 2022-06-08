@@ -93,6 +93,7 @@ class TeacherController extends Controller
         $teacher->name= $request->name;
         $teacher->email= $request->email;
         $teacher->phone= $request->phone;
+        $teacher->password = $request->password;
         $teacher->save();
         return redirect()->route('teacherList');
     }
@@ -101,15 +102,19 @@ class TeacherController extends Controller
         return view('teacher.teacherList')->with('teachers', $teachers);
     }
 
-    public function teacherCourses(){
+    public function teacherCourses(Request $request){
 
-        $t = Teacher::where('id',1)->first();
+        $t = Teacher::where('id',$request->id)->first();
         // return $t->id;
         //hasmany
         // return $t->courses;
 
         //eloquent
         return $t->assignedCourses();
+    }
+    public function teacherDash(){
+        return view('teacher.teacherDash');
+
     }
 
 }

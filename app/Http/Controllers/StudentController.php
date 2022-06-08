@@ -7,6 +7,9 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
+    public function __construct(){
+        $this->middleware('ValidTeacher');
+    }
     public function studentList(){
         // $student = array();
 
