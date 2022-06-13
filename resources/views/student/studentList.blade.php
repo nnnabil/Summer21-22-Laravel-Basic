@@ -16,4 +16,7 @@
     @endforeach
 
 </table>
+<div class="d-flex justify-content-center">
+    {!! $students->links() !!}
+</div>
 @endsection

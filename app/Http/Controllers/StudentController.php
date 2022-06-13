@@ -23,7 +23,7 @@ class StudentController extends Controller
         // }
 
         // return view('student.studentList')->with('students', $students);
-            $students = Student::all();
+            $students = Student::paginate(3);
             return view('student.studentList')->with('students', $students);
     }
     public function studentEdit(Request $request){
