@@ -15,5 +15,12 @@ class CourseSeeder extends Seeder
     public function run()
     {
         //
+        \App\Models\Course::factory()->create([
+            'c_name' => 'PL1',
+            'code' => 'CSC101',
+            'teacherId' => '1',
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
     }
 }
